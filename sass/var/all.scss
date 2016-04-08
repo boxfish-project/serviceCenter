@@ -1,0 +1,21 @@
+// 基础样式 背景色
+$base-color: #32404E;
+// 基础样式 前景色
+$lightest-color: #fff;
+
+
+// 导航栏
+$panel-navigation-background-color: #32404e;
+$panel-navigation-item-line-height: 64px;
+$panel-navigation-item-text-color: #ADB3B8;
+$panel-header-background-color: dynamic($base-color);
+
+// 工具栏按钮
+$button-toolbar-background-color: transparent;
+$button-toolbar-border-color: transparent;
+$button-toolbar-background-color-over: #efefef;
+$button-toolbar-background-color-pressed: #D1D1D1;
+
+.x-title-text-default:after {
+  display:none !important;
+}

@@ -1,0 +1,22 @@
+// 组件阴影
+@mixin box-shadow($h-shadow,$v-shadow,$blur,$spread,$shadow-color) {
+  -webkit-box-shadow: $h-shadow $v-shadow $blur $spread $shadow-color;
+  -moz-box-shadow: $h-shadow $v-shadow $blur $spread $shadow-color;
+  -ms-box-shadow: $h-shadow $v-shadow $blur $spread $shadow-color;
+  box-shadow: $h-shadow $v-shadow $blur $spread $shadow-color;
+}
+
+// 组件阴影
+.shadow-panel{
+  @include box-shadow(0, 1px, 2px, 0, rgba(0,0,0,0.2));
+}
+
+// 底层图层
+.shadow-panel{
+  z-index: 0 !important;
+}
+
+// 字符图标
+.x-fa {
+  display: inline-block;
+}

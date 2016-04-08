@@ -1,0 +1,25 @@
+Ext.define('serviceCenter.service.model.ServiceModel',{
+    extend:'Ext.data.Model',
+
+    field:[
+      {
+        name:'id',type:'string'
+      },{
+        name:'createtime',type:'string'
+      },{
+        name:'updatetime',type:'string'
+      },{
+        name:'name',type:'string'
+      },{
+        name:'code',type:'string'
+      },{
+        name:'description',type:'string'
+      },{
+        name:'originalPrice',type:'string'
+      },{
+        name:'startTime',type:'string'
+      },{
+        name:'endTime',type:'string'
+      }
+    ]
+});
