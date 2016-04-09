@@ -8,12 +8,12 @@ Ext.define('serviceCenter.service.view.ServiceViewModel',{
     stores:{
       //主服务信息
       service:{
-        // model:'serviceCenter.service.model.ServiceModel',
+        model:'serviceCenter.service.model.ServiceModel',
         autoLoad: true,
         pageSize:20,
         proxy:{
           type:'rest',
-          url:URL_SERVICE_PREFIX+SERVICE_PORT+'/product/page',
+          url:URL_PREFIX+SERVICE_PORT+'/product/page',
           reader:{
             type:'json',
             rootProperty:'data.content',

@@ -8,7 +8,7 @@ Ext.define('serviceCenter.orderCenter.view.OrderCenterController', {
     // 点击grid更新form和具体内容多grid数据
     onSelect:function(grid, record, index, eOpts ){
       //form赋值
-        var orderCenterData      = record.data;
+        var orderCenterData = record.data;
         this.assignVal({'order_user_id':orderCenterData.userID,'order_code':orderCenterData.code,'order_total_price':orderCenterData.totalPrice,
               'order_create_time':orderCenterData.createTime,'order_pay_time':orderCenterData.pay_time,'order_status':orderCenterData.status,
               'order_remark_title':orderCenterData.remark_title,'order_remark_description':orderCenterData.remark_description,
@@ -16,17 +16,17 @@ Ext.define('serviceCenter.orderCenter.view.OrderCenterController', {
               'order_update_time':orderCenterData.updateTime});
 
     //  grid加载数据
-     var orderServiceGrid = this.lookupReference('orderServiceGrid');
+        var orderServiceGrid = this.lookupReference('orderServiceGrid');
         var datas=record.data.orderDetails;
         var store = Ext.create('Ext.data.Store', {});
         store.setData(datas);
         orderServiceGrid.setStore(store);
     //日志记录
-     var orderServiceLogGrid = this.lookupReference('orderServiceLogGrid');
-     var logDatas=record.data.orderLogs;
-     var logStore = Ext.create('Ext.data.Store', {});
-     logStore.setData(logDatas);
-     orderServiceLogGrid.setStore(logStore);
+        var orderServiceLogGrid = this.lookupReference('orderServiceLogGrid');
+        var logDatas=record.data.orderLogs;
+        var logStore = Ext.create('Ext.data.Store', {});
+        logStore.setData(logDatas);
+        orderServiceLogGrid.setStore(logStore);
     },
 
     //公共赋值

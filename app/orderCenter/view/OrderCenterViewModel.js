@@ -14,7 +14,7 @@ Ext.define('serviceCenter.orderCenter.view.OrderCenterViewModel', {
         pageSize:20,
         proxy:{
           type:'rest',
-          url:URL_SERVICE_PREFIX+ORDER_PORT+'/order/page',
+          url:URL_PREFIX+ORDER_PORT+'/order/page',
           reader:{
             type:'json',
             rootProperty:'data.content',
@@ -33,7 +33,7 @@ Ext.define('serviceCenter.orderCenter.view.OrderCenterViewModel', {
         fields: ['value','key'],
         proxy:{
           type:'rest',
-          url:URL_SERVICE_PREFIX+ORDER_PORT+'/order/status',
+          url:URL_PREFIX+ORDER_PORT+'/order/status',
           reader:{
             type:'json',
             rootProperty:'data',

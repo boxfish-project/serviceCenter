@@ -9,24 +9,25 @@ Ext.define('serviceCenter.serviec.view.ServiceController', {
     // 点击grid更新form和具体内容多grid数据
     onSelect:function(grid, record, index, eOpts ){
       //form赋值
-        var serviceData      = record.data;
+        var serviceData = record.data;
         this.assignVal({'serviceName':serviceData.name,'serviceCode':serviceData.code,'serviceDescription':serviceData.description,
               'serviceOriginalPrice':serviceData.originalPrice,'servicePrice':serviceData.price,'serviceStartTime':serviceData.startTime,
               'serviceEndTime':serviceData.endTime,'serviceFlagEnable':serviceData.flagEnable,'serviceFlagVisible':serviceData.flagVisible,
               'serviceCreateTime':serviceData.createTime,'serviceUpdateTime':serviceData.updateTime});
      //grid加载数据
-     var serviceSpecificGrid = this.lookupReference('serviceSpecificGrid');
-        var datas=record.data.productHasSKUSet;
+        var grid = this.lookupReference('serviceSpecificGrid');
+        var datas   =record.data.productHasSKUSet;
+
         var gridData= Array();
         for(var data in datas){
-          var obj=datas[data].productSKU;
-          amount=datas[data].amount;
+          var obj =datas[data].productSKU;
+          amount  =datas[data].amount;
           obj.amount=amount;
           gridData.push(obj);
         }
         var store = Ext.create('Ext.data.Store', {});
         store.setData(gridData);
-        serviceSpecificGrid.setStore(store);
+        grid.setStore(store);
     },
 
     //公共赋值
