@@ -58,19 +58,10 @@ Ext.define('serviceCenter.orderCenter.view.OrderCenterController', {
       var store=orderCenterGrid.getStore();
 
       var params=new Object();
-      if(status){params.status=status;}
+      if(status && status!='all'){params.status=status;}
       if(userID){params.userID=userID;}
       if(code){params.code=code;}
       store.reload({params:params});
-    },
-
-
-    //点击显示全部
-    onshowAll:function(){
-      var orderCenterGrid = this.lookupReference('orderCenterGrid');
-      var store=orderCenterGrid.getStore();
-      store.reload({params:''});
-      }
-
+    }
 
 });

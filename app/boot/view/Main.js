@@ -50,33 +50,7 @@ Ext.define('serviceCenter.boot.view.Main', {
                 {
                     xtype: 'tbspacer',
                     flex: 1
-                }
-                //,
-                // 搜索按钮
-                // {
-                //     cls: 'application-main-header-button',
-                //     iconCls: 'x-fa fa-search',
-                //     tooltip: '搜索'
-                // },
-                // // 邮件按钮
-                // {
-                //     cls: 'application-main-header-button',
-                //     iconCls: 'x-fa fa-envelope',
-                //     tooltip: '消息'
-                // },
-                // // 配置按钮
-                // {
-                //     cls: 'application-main-header-button',
-                //     iconCls: 'x-fa fa-th-large',
-                //     tooltip: '配置'
-                // },
-                // // 用户姓名
-                // {
-                //     xtype: 'tbtext',
-                //     text: '用户姓名'
-                // }
-                ,
-                //用户头像
+                },
                 {
                     xtype: 'image',
                     cls: 'application-main-header-image',

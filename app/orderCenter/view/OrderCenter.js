@@ -43,11 +43,6 @@ Ext.define('serviceCenter.orderCenter.view.OrderCenter', {
             preserveScrollOnRefresh: true,
             stripeRows: true
         },
-        // selModel: {
-        //       //  type: 'spreadsheet',
-        //       //  checkboxSelect: true,
-        //        rowSelect : true
-        //     },
         plugins:[{
                   ptype:'clipboard',
                   pluginId:'clipboard',
@@ -72,7 +67,6 @@ Ext.define('serviceCenter.orderCenter.view.OrderCenter', {
             text:'订单号',
             dataIndex:'code',
             sortable:true,
-            // hidden:true,
             width:300,
             editor:{
               xtype:'textfield'
@@ -88,7 +82,6 @@ Ext.define('serviceCenter.orderCenter.view.OrderCenter', {
             text:'生成时间',
             dataIndex:'createTime',
             sortable:true,
-            // hidden:true,
             width:200,
             align : 'center'
           },{
@@ -103,7 +96,6 @@ Ext.define('serviceCenter.orderCenter.view.OrderCenter', {
             text:'订单状态',
             dataIndex:'status',
             sortable:true,
-            // hidden:true,
             width:100,
             align : 'center'
           }
@@ -149,55 +141,52 @@ Ext.define('serviceCenter.orderCenter.view.OrderCenter', {
         tbar: [
                   {
                       xtype: 'textfield',
-                      fieldLabel:'用户号:',
+                      fieldLabel:'用户号',
                       labelWidth:45,
                       name: 'condition',
                       itemId: 'userIDQuery',
                       reference:'userIDQuery',
                       width:150,
-                      emptyText: '按用户号查询',
+                      emptyText: '',
                       allowBlank: true,
                       listeners:{
-                        // specialkey:'onEnterKeyToSearch'
                       }
                   },
                       // 条件查询
                 {
                     xtype: 'textfield',
-                    fieldLabel:'订单号:',
+                    fieldLabel:'订单号',
                     labelWidth:45,
                     name: 'condition',
                     itemId: 'dictionary-condition',
                     itemId: 'codeQuery',
                     reference:'codeQuery',
                     width:255,
-                    emptyText: '按订单号查询',
+                    emptyText: '',
                     allowBlank: true,
                     listeners:{
-                      // specialkey:'onEnterKeyToSearch'
                     }
                 },{
                      xtype: 'combobox',
-                     padding:'0 0 0 10',
+                     padding:'0 0 0 25',
                      fieldLabel: '订单状态',
                      labelWidth:60,
                      itemId: 'orderStatusComboBox',
                      reference:'orderStatusComboBox',
                      bind:{
-                       store:'{statusComboBox}'
+                      store:'{statusComboBox}'
                      },
+                     value:'all',
                      forceSelection: true,
                      width:200,
                      loadMask:false,
+                     triggerAction:'all',
                     //  multiSelect: true,
-                    //  editable: false,
+                     editable: false,
                      displayField: 'value',
                      valueField: 'key',
-                     emptyText: '请选择',
-                     allowBlank: true,
-                     listeners:{
-                       // specialkey:'onEnterKeyToSearch'
-                     }
+                    //  emptyText: '请选择',
+                     allowBlank: true
                  }, {
                      text: '查询',
                      iconCls: 'x-fa fa-search',
@@ -205,12 +194,7 @@ Ext.define('serviceCenter.orderCenter.view.OrderCenter', {
                   },{
                       xtype: 'tbspacer',
                       width: 10
-                  }, {
-                      text: '显示全部',
-                      reference: 'showAll',
-                      handler:'onshowAll'
-                   }
-
+                  }
             ],
             // 分页栏
           bbar: [
@@ -248,15 +232,12 @@ Ext.define('serviceCenter.orderCenter.view.OrderCenter', {
           border:'1px solid #D5D5D5'
         },
         margin:'0 0 0 5',
-        // Padding: 20,
         flex: 1,
         layout:'vbox',
 
         items:[
           {
-            // hidden:true,
             xtype:'form',
-            // margin: 2,
             itemId:'orderCenterForm',
             reference:'orderCenterForm',
             padding:'10 0 0 20',
@@ -271,7 +252,6 @@ Ext.define('serviceCenter.orderCenter.view.OrderCenter', {
               minWidth:290,
               height:40
             },
-            // Width:500,
             items: [{
                     html: '<font color=gray size=3pt>订单详情</font>',
                     colspan:3
@@ -332,15 +312,6 @@ Ext.define('serviceCenter.orderCenter.view.OrderCenter', {
 
               ]
           },
-          // {//加载动画
-          //     hidden:true,
-          //     xtype: 'component',
-          //     reference: 'loadingImage',
-          //     padding:'170 0 0 400',
-          //     html: '<div><img src="resources/images/loading.gif">加载中</div>',
-          //     width: 900,
-          //     height:380
-          // },
           {
             xtype: 'gridpanel',
             reference:'orderServiceGrid',
@@ -348,7 +319,6 @@ Ext.define('serviceCenter.orderCenter.view.OrderCenter', {
             style: {
               border:'1px solid #D5D5D5'
             },
-            // margin: 5,
             viewConfig: {
                 preserveScrollOnRefresh: true,
                 stripeRows: true
@@ -458,7 +428,6 @@ Ext.define('serviceCenter.orderCenter.view.OrderCenter', {
             style: {
               border:'1px solid #D5D5D5'
             },
-            // margin: 5,
             viewConfig: {
                 preserveScrollOnRefresh: true,
                 stripeRows: true

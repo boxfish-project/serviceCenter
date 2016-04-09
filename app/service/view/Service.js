@@ -40,11 +40,6 @@ Ext.define('serviceCenter.service.view.Servie',{
             preserveScrollOnRefresh: true,
             stripeRows: true
         },
-        // selModel: {
-        //       //  type: 'spreadsheet',
-        //       //  checkboxSelect: true,
-        //        rowSelect : true
-        //     },
         plugins:[{
                   ptype:'clipboard',
                   pluginId:'clipboard',
@@ -132,25 +127,23 @@ Ext.define('serviceCenter.service.view.Servie',{
           }
         ],
           // 工具栏
-        tbar: [
-                // 条件查询
-                {
-                    xtype: 'textfield',
-                    name: 'condition',
-                    itemId: 'dictionary-condition',
-                    labelWidth: 35,
-                    width:292,
-                    emptyText: '默认精确查询',
-                    allowBlank: true,
-                    listeners:{
-                      // specialkey:'onEnterKeyToSearch'
-                    }
-                }, {
-                    text: '',
-                    iconCls: 'x-fa fa-search'
-                    // handler:'onSearchClick'
-                 }
-            ],
+        // tbar: [
+        //         // 条件查询
+        //         {
+        //             xtype: 'textfield',
+        //             name: 'condition',
+        //             itemId: 'dictionary-condition',
+        //             labelWidth: 35,
+        //             width:292,
+        //             emptyText: '',
+        //             allowBlank: true,
+        //             listeners:{
+        //             }
+        //         }, {
+        //             text: '',
+        //             iconCls: 'x-fa fa-search'
+        //          }
+        //     ],
             // 分页栏
           bbar: [
                 {

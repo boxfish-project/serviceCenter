@@ -12,19 +12,9 @@ Ext.define('serviceCenter.orderCenter.model.OrderCenterModel', {
         name:'totalPrice',type:'string'
       },{
         name:'createTime',type:'string'
-      }
-      // ,{
-      //   name:'pay_time',type:'string'
-      // }
-      ,{
+      } ,{
         name:'status',type:'string'
-      }
-      // ,{
-      //   name:'remark_title',type:'string'
-      // },{
-      //   name:'remark_description',type:'string'
-      // }
-      ,{
+      },{
         name:'payChannel',type:'string'
       },{
         name:'orderChannel',type:'string'
