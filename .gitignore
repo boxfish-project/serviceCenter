@@ -43,3 +43,4 @@ node_modules
 bootstrap.json
 build/
 ext/
+.sencha/
