@@ -58,7 +58,7 @@ Ext.define('serviceCenter.orderCenter.view.OrderCenterController', {
       var store=orderCenterGrid.getStore();
 
       var params=new Object();
-      if(status && status!='all'){params.status=status;}
+      if(status && status!=-1){params.status=status;}
       if(userID){params.userID=userID;}
       if(code){params.code=code;}
       store.reload({params:params});

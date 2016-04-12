@@ -185,7 +185,7 @@ Ext.define('serviceCenter.orderCenter.view.OrderCenter', {
                      editable: false,
                      displayField: 'value',
                      valueField: 'key',
-                    //  emptyText: '请选择',
+                     emptyText: '请选择',
                      allowBlank: true
                  }, {
                      text: '查询',
